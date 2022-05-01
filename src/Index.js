@@ -1,3 +1,5 @@
 import Clock from "./Clock";
+import BuyPremium from "./BuyPremium";
+import BuyPrice from "./BuyPrice";
 
-export {Clock}
+export {Clock, BuyPremium, BuyPrice}

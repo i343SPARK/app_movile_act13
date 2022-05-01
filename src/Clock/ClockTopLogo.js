@@ -10,7 +10,6 @@ export default function ClockTopLogo(){
 
 const styles = StyleSheet.create({
     logoTypeContainer:{
-        paddingTop: 40,
         width: "100%",
         backgroundColor: "#1B1B1B",
     },
