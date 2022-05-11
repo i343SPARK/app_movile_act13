@@ -1,10 +1,20 @@
 import {View, Text, Image, StyleSheet} from "react-native";
+import { useState, useEffect } from "react";
 
 export default function ClockMidle(){
+    const [clockState, setClockState] = useState()
+
+    useEffect(() => {
+        setInterval(() => {
+            const date = new Date()
+            setClockState(date.toLocaleTimeString())
+        }, 1000)
+    }, [])
+
     return(
         <View style={styles.midle_container}>
             <View style={styles.clock_container}>
-                <Text style={styles.clock_info}>10:00</Text>
+                <Text style={styles.clock_info}>{clockState}</Text>
             </View>
             <View style={styles.news_container}>
                 <Text style={styles.text_news}>Have <Text style={{color:"#D99002"}}>news</Text></Text>
@@ -30,12 +40,13 @@ const styles = StyleSheet.create({
         backgroundColor: "#3A3A3A"
     },
     clock_info:{
-        width: "70%",
+        width: "65%",
         marginLeft: "auto",
         marginRight: "auto",
-        paddingTop: 20,
+        paddingTop: 60,
         color: "#fff",
-        fontSize: 100
+        fontSize: 35,
+        fontWeight: "bold"
 
     },
     news_container:{
